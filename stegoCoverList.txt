@@ -1,0 +1,3 @@
+puisi.txt 11
+cerpen.txt 101
+cerpenkakek.txt 133
