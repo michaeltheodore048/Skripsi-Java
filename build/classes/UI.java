@@ -22,11 +22,11 @@ import java.util.logging.Logger;
  */
 public class UI extends javax.swing.JFrame {
 
-    public ArrayList<String> stegoCover;
-    public Embedder emb;
-    public Extractor ext;
-    public FileReader fr;
-    public BufferedReader br;
+    private ArrayList<String> stegoCover;
+    private Embedder emb;
+    private Extractor ext;
+    private FileReader fr;
+    private BufferedReader br;
     
     /**
      * Creates new form UI
@@ -99,9 +99,9 @@ public class UI extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        label1.setText("Silahkan ketik pesan rahasia yang akan disisipkan");
+        label1.setText("Silahkan ketik pesan rahasia yang akan disembunyikan");
 
-        button1.setLabel("Sisipkan");
+        button1.setLabel("Embed");
         button1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 button1ActionPerformed(evt);
@@ -146,10 +146,11 @@ public class UI extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        jTabbedPane1.addTab("Sisipkan", panel1);
+        jTabbedPane1.addTab("Embed", panel1);
 
         label3.setText("Silahkan salin pesan yang akan diekstrak");
 
+        button2.setActionCommand("Extract");
         button2.setLabel("Ekstrak");
         button2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -194,7 +195,7 @@ public class UI extends javax.swing.JFrame {
                 .addContainerGap(23, Short.MAX_VALUE))
         );
 
-        jTabbedPane1.addTab("Ekstrak", jPanel1);
+        jTabbedPane1.addTab("Extract", jPanel1);
 
         label5.setText("Judul:");
 
@@ -331,19 +332,19 @@ public class UI extends javax.swing.JFrame {
 
         jTabbedPane1.addTab("Tambah Sinonim", jPanel3);
 
-        label11.setText("Sisipkan:");
+        label11.setText("Embed:");
 
-        label12.setText("Ketik pesan rahasia, klik tombol Sisipkan, stego objek akan muncul.");
+        label12.setText("Ketik pesan rahasia, klik tombol Embed, stego-object akan muncul.");
 
-        label13.setText("Ekstrak:");
+        label13.setText("Extract:");
 
-        label14.setText("Salin stego object yang diterima, klik Ekstrak. Pesan rahasia diakhiri oleh karakter '#'.");
+        label14.setText("Salin stego-object yang diterima, klik Extract. Pesan rahasia diakhiri oleh karakter '#'.");
 
         label15.setText("Cover:");
 
-        label16.setText("Stego cover dapat ditambahkan pada bagian Tambah Cover.");
+        label16.setText("Stego-cover dapat ditambahkan pada bagian Tambah Cover.");
 
-        label17.setText("Stego cover yang baru ditambahkan belum memiliki sinonim yang lengkap.");
+        label17.setText("Stego-cover yang baru ditambahkan belum memiliki sinonim yang lengkap.");
 
         label18.setText("Sinonim:");
 
@@ -365,19 +366,19 @@ public class UI extends javax.swing.JFrame {
                             .addComponent(label11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(label13, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(label15, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGap(16, 16, 16)
                         .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(label16, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(label14, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(label12, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(label17, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(label16, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(label12, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(jPanel4Layout.createSequentialGroup()
                         .addComponent(label18, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(label20, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(label19, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(label21, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addComponent(label21, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(label17, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addContainerGap(15, Short.MAX_VALUE))
         );
         jPanel4Layout.setVerticalGroup(

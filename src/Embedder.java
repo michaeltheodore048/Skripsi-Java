@@ -17,25 +17,20 @@ import java.io.IOException;
  */
 public class Embedder {
 
-    TesaurusReader tr;
-    PemotongKata pk;
-    FileWriter fw;
-    BufferedWriter bw;
-    FileReader fr;
-    BufferedReader br;
+    private DatabaseReader dr;
+    private PemotongKata pk;
+    private FileReader fr;
+    private BufferedReader br;
 
     public Embedder(String stegoFileName) throws FileNotFoundException, IOException {
-        this.tr = new TesaurusReader();
+        this.dr = new DatabaseReader();
         this.pk = new PemotongKata();
-//        this.fw = new FileWriter("stego-object.txt");
-//        this.bw = new BufferedWriter(fw);
         this.fr = new FileReader("stegoCover/" + stegoFileName);
         this.br = new BufferedReader(fr);
-//        System.out.println(stegoFileName);
     }
-    
-    public Embedder() throws FileNotFoundException{
-        this.tr = new TesaurusReader();
+
+    public Embedder() throws FileNotFoundException {
+        this.dr = new DatabaseReader();
         this.pk = new PemotongKata();
     }
 
@@ -66,14 +61,6 @@ public class Embedder {
     }
 
     public String embed(String secret) throws IOException {
-//        String binerCode = "0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
-//                + "0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
-//                + "0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
-//                + "0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
-//                + "0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
-//                + "0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
-//                + "0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
-//                + "0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000";
         String binerCode = this.stringToBinaryCode(secret);
         String errLog = new String();
         String stegoObject = new String();
@@ -96,17 +83,17 @@ public class Embedder {
                             if (Character.isLetter(tempArr[j]) || tempArr[j] == '-') {
                                 kataTemp += tempArr[j];
                             } else if (!Character.isLetter(tempArr[j]) && kataTemp.isEmpty()) {
-                                stegoObject += tempArr[j];  //bw.write(tempArr[j]);
+                                stegoObject += tempArr[j];
                             } else if (!kataTemp.isEmpty() && !Character.isLetter(tempArr[j])) {
                                 tempTandaBacaAkhir += tempArr[j];
                             }
                         }
 
                         if (!kataTemp.isEmpty()) {
-                            if (pk.getJumlahSukuKata(kataTemp) == Integer.parseInt(binerArray[ctBiner]+"")) {
+                            if (pk.getJumlahSukuKata(kataTemp) == Integer.parseInt(binerArray[ctBiner] + "")) {
                                 res = kataTemp;
                             } else {
-                                res = tr.findSynonym(kataTemp);
+                                res = dr.findSynonym(kataTemp);
                             }
 
                             if (res.equalsIgnoreCase("") || res.equalsIgnoreCase("tidak ditemukan") || res.equalsIgnoreCase(" ")) {
@@ -143,7 +130,7 @@ public class Embedder {
     public String checkAllSynonim(String stegoFileName) throws IOException {
         this.fr = new FileReader("stegoCover/" + stegoFileName);
         this.br = new BufferedReader(fr);
-        
+
         String errLog = new String();
         String line = br.readLine();
         int ctBiner = 0;
@@ -165,10 +152,10 @@ public class Embedder {
                     }
 
                     if (!kataTemp.isEmpty()) {
-                        String tempSynonym = tr.findSynonym(kataTemp);
+                        String tempSynonym = dr.findSynonym(kataTemp);
                         if (tempSynonym.equalsIgnoreCase("") || tempSynonym.equalsIgnoreCase("tidak ditemukan") || tempSynonym.equalsIgnoreCase(" ")) {
                             errLog += kataTemp + " -> " + pk.generateLevel3(pk.generateLevel2(pk.generateLevel1(kataTemp))) + " | Synonym not found in database!\n";
-                        }else if (pk.getJumlahSukuKata(kataTemp) == pk.getJumlahSukuKata(tempSynonym)) {
+                        } else if (pk.getJumlahSukuKata(kataTemp) == pk.getJumlahSukuKata(tempSynonym)) {
                             errLog += kataTemp + " -> " + pk.generateLevel3(pk.generateLevel2(pk.generateLevel1(kataTemp))) + " | Synonym not found in database!\n";
                         }
                     }
@@ -178,9 +165,7 @@ public class Embedder {
         }
         br.close();
         fr.close();
-            return errLog;
-        }
-
+        return errLog;
     }
 
-
+}

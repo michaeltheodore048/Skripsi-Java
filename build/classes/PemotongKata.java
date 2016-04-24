@@ -34,24 +34,6 @@ public class PemotongKata {
         }
         return res;
     }
-    
-//    public String getPattern(String input) {
-//        char[] temp = input.toLowerCase().toCharArray();
-//        String res = "";
-//        for (int i = 0; i < temp.length; i++) {
-//            if (temp[i] == 'a' || temp[i] == 'i' || temp[i] == 'u' || temp[i] == 'e' || temp[i] == 'o') {
-//                res += "v";
-//            } else if (temp[i] == 'b' || temp[i] == 'c' || temp[i] == 'd' || temp[i] == 'f' || temp[i] == 'g' || temp[i] == 'h'
-//                    || temp[i] == 'j' || temp[i] == 'k' || temp[i] == 'l' || temp[i] == 'm' || temp[i] == 'n' || temp[i] == 'p'
-//                    || temp[i] == 'q' || temp[i] == 'r' || temp[i] == 's' || temp[i] == 't' || temp[i] == 'v' || temp[i] == 'w'
-//                    || temp[i] == 'x' || temp[i] == 'y' || temp[i] == 'z') {
-//                res += "k";
-//            } else {
-//                res += ".";
-//            }
-//        }
-//        return res;
-//    }
 
     public ArrayList generateLevel1(String text) {
         ArrayList res = new ArrayList();
@@ -163,7 +145,7 @@ public class PemotongKata {
                 } else if (this.getPattern(now).equals("kk")) {
                     state = 7;
                     before = now;
-                }else{
+                } else {
                     res.add(now);
                 }
             } else if (state == 1) {
@@ -187,7 +169,7 @@ public class PemotongKata {
                 } else {
                     state = 0;
                     i--;
-                    res.add(before); //res.add(before.concat(now));
+                    res.add(before);
                     before = "";
                 }
             } else if (state == 4) {
@@ -221,9 +203,9 @@ public class PemotongKata {
                 if (this.getPattern(now).equals("v")) {
                     state = 6;
                     before = before.concat(now);
-                }else if (this.getPattern(now).equals("k")) {
+                } else if (this.getPattern(now).equals("k")) {
                     before = before.concat(now);
-                }else{
+                } else {
                     state = 0;
                     i--;
                     res.add(before);
@@ -235,7 +217,6 @@ public class PemotongKata {
         if (!before.isEmpty()) {
             res.add(before);
         }
-
         return res;
     }
 
@@ -259,7 +240,7 @@ public class PemotongKata {
                 } else if (this.getPattern(now).equals("kv") || this.getPattern(now).equals("kkv") || this.getPattern(now).equals("kkkv")) {
                     state = 5;
                     before = now;
-                }else{
+                } else {
                     res.add(now);
                 }
             } else if (state == 3) {
@@ -321,8 +302,8 @@ public class PemotongKata {
 
         return res;
     }
-    
-    public int getJumlahSukuKata(String in){
+
+    public int getJumlahSukuKata(String in) {
         ArrayList input = new ArrayList();
         input = this.generateLevel3(this.generateLevel2(this.generateLevel1(in)));
         int ct = 0;
@@ -331,7 +312,7 @@ public class PemotongKata {
                 ct++;
             }
         }
-        return ct%2;
+        return ct % 2;
     }
 
 }

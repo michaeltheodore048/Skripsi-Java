@@ -23,15 +23,15 @@ public class Tester {
     /**
      * @param args the command line arguments
      */
-    public static void main(String[] args) throws FileNotFoundException, IOException {
-        Scanner sc = new Scanner(System.in);
-        FileReader fr = new FileReader("stegoCover/cerpen.txt");
-        BufferedReader br = new BufferedReader(fr);
-
-        PemotongKata pk = new PemotongKata();
-        TesaurusReader tr = new TesaurusReader();
+//    public static void main(String[] args) throws FileNotFoundException, IOException {
+//        Scanner sc = new Scanner(System.in);
+//        FileReader fr = new FileReader("stegoCover/cerpen.txt");
+//        BufferedReader br = new BufferedReader(fr);
+//
+//        PemotongKata pk = new PemotongKata();
+//        TesaurusReader tr = new TesaurusReader();
 //        String in = sc.nextLine();
-        ArrayList res = new ArrayList();
+//        ArrayList res = new ArrayList();
 //        res = pk.generateLevel3(pk.generateLevel2(pk.generateLevel1(in)));
 //        res = pk.generateLevel2(pk.generateLevel1(in));
 //        res = pk.generateLevel1(in);
@@ -100,6 +100,6 @@ public class Tester {
 //        System.out.println(pk.generateLevel2(pk.generateLevel1("transmigrasi")));
 //        System.out.println(pk.generateLevel3(pk.generateLevel2(pk.generateLevel1("ahsjdg"))));
 //        System.out.println(pk.getPattern("ng"));
-    }
+//    }
 
 }

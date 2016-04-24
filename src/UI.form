@@ -48,8 +48,8 @@
         <Container class="java.awt.Panel" name="panel1">
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
-              <JTabbedPaneConstraints tabName="Sisipkan">
-                <Property name="tabTitle" type="java.lang.String" value="Sisipkan"/>
+              <JTabbedPaneConstraints tabName="Embed">
+                <Property name="tabTitle" type="java.lang.String" value="Embed"/>
               </JTabbedPaneConstraints>
             </Constraint>
           </Constraints>
@@ -102,14 +102,14 @@
           <SubComponents>
             <Component class="java.awt.Label" name="label1">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Silahkan ketik pesan rahasia yang akan disisipkan"/>
+                <Property name="text" type="java.lang.String" value="Silahkan ketik pesan rahasia yang akan disembunyikan"/>
               </Properties>
             </Component>
             <Component class="java.awt.TextField" name="inSecret">
             </Component>
             <Component class="java.awt.Button" name="button1">
               <Properties>
-                <Property name="label" type="java.lang.String" value="Sisipkan"/>
+                <Property name="label" type="java.lang.String" value="Embed"/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="button1ActionPerformed"/>
@@ -127,8 +127,8 @@
         <Container class="javax.swing.JPanel" name="jPanel1">
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
-              <JTabbedPaneConstraints tabName="Ekstrak">
-                <Property name="tabTitle" type="java.lang.String" value="Ekstrak"/>
+              <JTabbedPaneConstraints tabName="Extract">
+                <Property name="tabTitle" type="java.lang.String" value="Extract"/>
               </JTabbedPaneConstraints>
             </Constraint>
           </Constraints>
@@ -186,6 +186,7 @@
             </Component>
             <Component class="java.awt.Button" name="button2">
               <Properties>
+                <Property name="actionCommand" type="java.lang.String" value="Extract"/>
                 <Property name="label" type="java.lang.String" value="Ekstrak"/>
               </Properties>
               <Events>
@@ -440,12 +441,11 @@
                                   <Component id="label13" alignment="0" min="-2" max="-2" attributes="0"/>
                                   <Component id="label15" alignment="0" min="-2" max="-2" attributes="0"/>
                               </Group>
-                              <EmptySpace max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="16" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="label16" min="-2" max="-2" attributes="0"/>
                                   <Component id="label14" min="-2" max="-2" attributes="0"/>
+                                  <Component id="label16" min="-2" max="-2" attributes="0"/>
                                   <Component id="label12" min="-2" max="-2" attributes="0"/>
-                                  <Component id="label17" min="-2" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
@@ -455,6 +455,7 @@
                                   <Component id="label20" min="-2" max="-2" attributes="0"/>
                                   <Component id="label19" min="-2" max="-2" attributes="0"/>
                                   <Component id="label21" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="label17" alignment="0" min="-2" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                       </Group>
@@ -499,22 +500,22 @@
           <SubComponents>
             <Component class="java.awt.Label" name="label11">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Sisipkan:"/>
+                <Property name="text" type="java.lang.String" value="Embed:"/>
               </Properties>
             </Component>
             <Component class="java.awt.Label" name="label12">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Ketik pesan rahasia, klik tombol Sisipkan, stego objek akan muncul."/>
+                <Property name="text" type="java.lang.String" value="Ketik pesan rahasia, klik tombol Embed, stego-object akan muncul."/>
               </Properties>
             </Component>
             <Component class="java.awt.Label" name="label13">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Ekstrak:"/>
+                <Property name="text" type="java.lang.String" value="Extract:"/>
               </Properties>
             </Component>
             <Component class="java.awt.Label" name="label14">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Salin stego object yang diterima, klik Ekstrak. Pesan rahasia diakhiri oleh karakter &apos;#&apos;."/>
+                <Property name="text" type="java.lang.String" value="Salin stego-object yang diterima, klik Extract. Pesan rahasia diakhiri oleh karakter &apos;#&apos;."/>
               </Properties>
             </Component>
             <Component class="java.awt.Label" name="label15">
@@ -524,12 +525,12 @@
             </Component>
             <Component class="java.awt.Label" name="label16">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Stego cover dapat ditambahkan pada bagian Tambah Cover."/>
+                <Property name="text" type="java.lang.String" value="Stego-cover dapat ditambahkan pada bagian Tambah Cover."/>
               </Properties>
             </Component>
             <Component class="java.awt.Label" name="label17">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Stego cover yang baru ditambahkan belum memiliki sinonim yang lengkap."/>
+                <Property name="text" type="java.lang.String" value="Stego-cover yang baru ditambahkan belum memiliki sinonim yang lengkap."/>
               </Properties>
             </Component>
             <Component class="java.awt.Label" name="label18">

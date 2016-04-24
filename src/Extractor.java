@@ -15,14 +15,14 @@ import java.io.IOException;
  */
 public class Extractor {
 
-    PemotongKata pk = new PemotongKata();
-    String asciiCode = new String();
+    private PemotongKata pk = new PemotongKata();
+    private String asciiCode = new String();
 
     public void read(String stegoObject) {
         String[] temp = stegoObject.split(" ");
         String code = new String();
         int checker = 0;
-        
+
         for (int i = 0; i < temp.length; i++) {
             char[] tempArr = temp[i].toCharArray();
             String tempKata = new String();
@@ -33,20 +33,20 @@ public class Extractor {
             }
             code += pk.getJumlahSukuKata(tempKata);
         }
-        
+
         for (int i = 0; i < code.length() - 7; i += 7) {
             this.asciiCode += "0" + code.substring(i, i + 7);
         }
     }
 
-    public String extract(String stegoObject){
+    public String extract(String stegoObject) {
         this.read(stegoObject);
         String res = new String();
         char nextChar;
 
         for (int i = 0; i < asciiCode.length() - 8; i += 8) {
             nextChar = (char) Integer.parseInt(asciiCode.substring(i, i + 8), 2);
-            if ((int)nextChar>31 && (int)nextChar<127) {
+            if ((int) nextChar > 31 && (int) nextChar < 127) {
                 res += nextChar;
             }
         }

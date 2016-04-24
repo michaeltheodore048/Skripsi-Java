@@ -17,49 +17,49 @@ import java.util.Random;
  */
 public class TesaurusReader {
 
-    FileReader fr;
-    PemotongKata pk = new PemotongKata();
-    BufferedReader br;
+    private FileReader fr;
+    private PemotongKata pk = new PemotongKata();
+    private BufferedReader br;
 
     public TesaurusReader() throws FileNotFoundException {
     }
-    
-    public String findSynonym(String input) throws IOException{
+
+    public String findSynonym(String input) throws IOException {
         this.fr = new FileReader("Tesaurus.txt");
         br = new BufferedReader(fr);
         String line = br.readLine();
         String[] lineArr;
         String synonyms = new String();
         String res = "";
-        
-        while(line != null){
+
+        while (line != null) {
             lineArr = line.split(" ");
             if (lineArr[0].equalsIgnoreCase(input)) {
                 synonyms += lineArr[1] + ",";
                 line = br.readLine();
-            }else{
+            } else {
                 line = br.readLine();
             }
         }
-        
+
         String[] arrOfSynonym = synonyms.split(",");
         ArrayList<String> tempForRandSynonym = new ArrayList();
-        
+
         for (int i = 0; i < arrOfSynonym.length; i++) {
             if (pk.getJumlahSukuKata(arrOfSynonym[i]) != pk.getJumlahSukuKata(input)) {
                 tempForRandSynonym.add(arrOfSynonym[i]);
             }
         }
-        
+
         if (tempForRandSynonym.size() == 0) {
             res = "tidak ditemukan";
-        }else{
+        } else {
             Random rg = new Random();
             res = tempForRandSynonym.get(rg.nextInt(tempForRandSynonym.size()));
         }
-        
+
         br.close();
         return res;
     }
-    
+
 }
