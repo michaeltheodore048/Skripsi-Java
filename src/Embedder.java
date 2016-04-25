@@ -127,7 +127,7 @@ public class Embedder {
 
     }
 
-    public String checkAllSynonim(String stegoFileName) throws IOException {
+    public String checkAllSynonym(String stegoFileName) throws IOException {
         this.fr = new FileReader("stegoCover/" + stegoFileName);
         this.br = new BufferedReader(fr);
 

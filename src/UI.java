@@ -553,7 +553,7 @@ public class UI extends javax.swing.JFrame {
         for (int i = 0; i < this.stegoCover.size(); i++) {
             String[] nameSize = this.stegoCover.get(i).split(" ");
             try {
-                res += this.emb.checkAllSynonim(nameSize[0]);
+                res += this.emb.checkAllSynonym(nameSize[0]);
             } catch (IOException ex) {
                 Logger.getLogger(UI.class.getName()).log(Level.SEVERE, null, ex);
             }
