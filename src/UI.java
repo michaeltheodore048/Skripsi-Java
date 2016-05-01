@@ -9,6 +9,7 @@ import java.util.ArrayList;
 import java.util.Random;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JFrame;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -20,19 +21,18 @@ import java.util.logging.Logger;
  *
  * @author Michael
  */
-public class UI extends javax.swing.JFrame {
+public class UI extends JFrame {
 
-    private ArrayList<String> stegoCover;
-    private Embedder emb;
-    private Extractor ext;
-    private FileReader fr;
-    private BufferedReader br;
+    public ArrayList<String> stegoCover;
+    public Embedder emb;
+    public Extractor ext;
+    public FileReader fr;
+    public BufferedReader br;
     
     /**
      * Creates new form UI
      */
     public UI() throws FileNotFoundException, IOException {
-        initComponents();
         this.fr = new FileReader("stegoCoverList.txt");
         this.br = new BufferedReader(this.fr);
         this.stegoCover = new ArrayList();
@@ -42,6 +42,7 @@ public class UI extends javax.swing.JFrame {
             this.stegoCover.add(temp);
             temp = br.readLine();
         }
+        initComponents();
     }
 
     /**
@@ -566,6 +567,7 @@ public class UI extends javax.swing.JFrame {
      * @param args the command line arguments
      */
     public static void main(String args[]) {
+                
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
