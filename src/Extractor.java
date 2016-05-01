@@ -22,7 +22,7 @@ public class Extractor {
         String[] temp = stegoObject.split(" ");
         String code = new String();
         int checker = 0;
-
+        System.out.println('5' == '-' || Character.isLetter('5'));
         for (int i = 0; i < temp.length; i++) {
             char[] tempArr = temp[i].toCharArray();
             String tempKata = new String();
@@ -31,7 +31,9 @@ public class Extractor {
                     tempKata += tempArr[j];
                 }
             }
-            code += pk.getJumlahSukuKata(tempKata);
+            if (!tempKata.equalsIgnoreCase("")) {
+                code += pk.getJumlahSukuKata(tempKata);
+            }
         }
 
         for (int i = 0; i < code.length() - 7; i += 7) {

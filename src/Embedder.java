@@ -17,20 +17,20 @@ import java.io.IOException;
  */
 public class Embedder {
 
-    private DatabaseReader dr;
+    private KamusReader dr;
     private PemotongKata pk;
     private FileReader fr;
     private BufferedReader br;
 
     public Embedder(String stegoFileName) throws FileNotFoundException, IOException {
-        this.dr = new DatabaseReader();
+        this.dr = new KamusReader();
         this.pk = new PemotongKata();
         this.fr = new FileReader("stegoCover/" + stegoFileName);
         this.br = new BufferedReader(fr);
     }
 
     public Embedder() throws FileNotFoundException {
-        this.dr = new DatabaseReader();
+        this.dr = new KamusReader();
         this.pk = new PemotongKata();
     }
 

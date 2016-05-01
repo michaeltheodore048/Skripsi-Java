@@ -15,13 +15,13 @@ import java.util.Random;
  *
  * @author Michael
  */
-public class DatabaseReader {
+public class KamusReader {
 
     private FileReader fr;
     private PemotongKata pk = new PemotongKata();
     private BufferedReader br;
 
-    public DatabaseReader() throws FileNotFoundException {
+    public KamusReader() throws FileNotFoundException {
     }
 
     public String findSynonym(String input) throws IOException {

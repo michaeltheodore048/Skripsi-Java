@@ -29,7 +29,7 @@ menunduk bersembunyi,nunduk
 terdiam diam
 pindah berpindah
 luar luaar
-kota metropolitan kotaa
+kota metropolitan,kotaa
 besok beesok,lusaa
 pamit berpamit
 sekaligus sekaliguus,sekaalian
@@ -305,10 +305,7 @@ emosi marah,ego
 meledak pecah
 saat disaat,tatkala,sewaktu
 aira raa
-kagumi idolakan
-peri batari
-cinta afeksi,asmara
-wanita perempuan
+cinta afeksi
 menjadi jadi,memerankan
 berlagak bergayaa,berpura-pura
 rupanya rupa,perawakan,gaya
@@ -339,10 +336,17 @@ jika andaikan,asalkan,jikalau,misalnya,semisal
 punya miliki,punyai
 perasaan perasaaan,rasaa
 sudah sudaah
-jelek-jelekkan ejek-ejek,hina-hina,cemooh
+jelek-jelekkan hina-hina,cemooh
 secara ala,secaraa,secaara,dengan
-terang-terangan blak-blakan,langsung
-di pada,dii
+terang-terangan blak-blakan
+jelek-jelekkan ejek-ejek
+terang-terangan langsung
+kagumi idolakan
+peri batari
+wanita perempuan
+cinta asmara
+di pada
+di dii
 depannya depan,hadapannya,muka
 kalau jika,andaikata,apabila,bilamana,seandainya,andaikan,asalkan
 hanyalah hanya,cuma,semata-mata
@@ -1220,3 +1224,4 @@ rumaku gedungku
 dihuni didiami
 lelaki laki,bujang
 tua berumur
+kami kalian

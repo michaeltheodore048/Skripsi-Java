@@ -2,3 +2,4 @@ puisi.txt 11
 cerpen.txt 101
 cerpenkakek.txt 133
 cek.txt 1
+blah.txt 0
