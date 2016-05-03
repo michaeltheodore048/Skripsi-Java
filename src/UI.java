@@ -33,7 +33,7 @@ public class UI extends JFrame {
      * Creates new form UI
      */
     public UI() throws FileNotFoundException, IOException {
-        this.fr = new FileReader("stegoCoverList.txt");
+        this.fr = new FileReader("E://Skripsi Michael Theodore Java/stegoCoverList.txt");
         this.br = new BufferedReader(this.fr);
         this.stegoCover = new ArrayList();
 
@@ -434,6 +434,7 @@ public class UI extends JFrame {
 
     private void button1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button1ActionPerformed
         // TODO add your handling code here:
+        
         String secretMsg = inSecret.getText();
         ArrayList<String> availableCover = new ArrayList();
 
@@ -461,6 +462,7 @@ public class UI extends JFrame {
         } else {
             stegoOut.setText("Pesan rahasia melebihi kapasitas yang ada!");
         }
+        
     }//GEN-LAST:event_button1ActionPerformed
 
     private void button2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button2ActionPerformed
@@ -472,6 +474,9 @@ public class UI extends JFrame {
 
     private void button3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button3ActionPerformed
         // TODO add your handling code here:
+        long startTime = System.currentTimeMillis();
+        System.out.println("Start:" + System.currentTimeMillis());
+        
         FileWriter fw;
         BufferedWriter bw;
         boolean duplicate = false;
@@ -494,12 +499,12 @@ public class UI extends JFrame {
             } else {
                 try {
                     // TODO add your handling code here:
-                    fw = new FileWriter("stegoCover/" + judul.getText() + ".txt");
+                    fw = new FileWriter("E://Skripsi Michael Theodore Java/stegoCover/" + judul.getText() + ".txt");
                     bw = new BufferedWriter(fw);
                     bw.write(coverIn.getText());
                     bw.close();
 
-                    fw = new FileWriter("stegoCoverList.txt", true);
+                    fw = new FileWriter("E://Skripsi Michael Theodore Java/stegoCoverList.txt", true);
                     bw = new BufferedWriter(fw);
                     bw.newLine();
                     bw.write(judul.getText() + ".txt " + coverIn.getText().split(" ").length / 7);
@@ -515,6 +520,11 @@ public class UI extends JFrame {
                 }
             }
         }
+        
+        long stopTime = System.currentTimeMillis();
+        System.out.println("Stop: " + System.currentTimeMillis());
+        long elapsedTime = stopTime - startTime;
+        System.out.println(elapsedTime);
     }//GEN-LAST:event_button3ActionPerformed
 
     private void button4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button4ActionPerformed
@@ -526,7 +536,7 @@ public class UI extends JFrame {
             sinonim.setText(pk.generateLevel3(pk.generateLevel2(pk.generateLevel1(sinonim.getText()))).toString());
         } else {
             try {
-                FileWriter fw = new FileWriter("Tesaurus.txt", true);
+                FileWriter fw = new FileWriter("E://Skripsi Michael Theodore Java/Tesaurus.txt", true);
                 BufferedWriter bw = new BufferedWriter(fw);
 
                 bw.newLine();

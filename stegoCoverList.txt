@@ -3,3 +3,14 @@ cerpen.txt 101
 cerpenkakek.txt 133
 cek.txt 1
 blah.txt 0
+cekcek.txt 0
+tes1.txt 14
+tes2.txt 28
+tes3.txt 57
+tes4.txt 114
+tes5.txt 214
+tes6.txt 357
+tes6ke2.txt 357
+tes7.txt 571
+tes8.txt 1142
+tes1ke2.txt 14

@@ -25,7 +25,7 @@ public class KamusReader {
     }
 
     public String findSynonym(String input) throws IOException {
-        this.fr = new FileReader("Tesaurus.txt");
+        this.fr = new FileReader("E://Skripsi Michael Theodore Java/Tesaurus.txt");
         br = new BufferedReader(fr);
         String line = br.readLine();
         String[] lineArr;

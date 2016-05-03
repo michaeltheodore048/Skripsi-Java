@@ -25,7 +25,7 @@ public class Embedder {
     public Embedder(String stegoFileName) throws FileNotFoundException, IOException {
         this.dr = new KamusReader();
         this.pk = new PemotongKata();
-        this.fr = new FileReader("stegoCover/" + stegoFileName);
+        this.fr = new FileReader("E://Skripsi Michael Theodore Java/stegoCover/" + stegoFileName);
         this.br = new BufferedReader(fr);
     }
 
@@ -128,7 +128,7 @@ public class Embedder {
     }
 
     public String checkAllSynonym(String stegoFileName) throws IOException {
-        this.fr = new FileReader("stegoCover/" + stegoFileName);
+        this.fr = new FileReader("E://Skripsi Michael Theodore Java/stegoCover/" + stegoFileName);
         this.br = new BufferedReader(fr);
 
         String errLog = new String();
