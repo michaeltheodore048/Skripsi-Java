@@ -462,7 +462,6 @@ public class UI extends JFrame {
         } else {
             stegoOut.setText("Pesan rahasia melebihi kapasitas yang ada!");
         }
-        
     }//GEN-LAST:event_button1ActionPerformed
 
     private void button2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button2ActionPerformed
@@ -470,6 +469,7 @@ public class UI extends JFrame {
         this.ext = new Extractor();
         String secret = this.ext.extract(stegoIn.getText());
         secretOut.setText(secret);
+        
     }//GEN-LAST:event_button2ActionPerformed
 
     private void button3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button3ActionPerformed
